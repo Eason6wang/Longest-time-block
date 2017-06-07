@@ -1,3 +1,10 @@
+#####################IDEA################################
+#1.Convert all the raw data into numbers
+#2.We get a set of time range(we called this busy-time)
+#3.We consider the time before 8am and after 10pm as busy-time
+#4.We get the compliment of the time range in the following week(available-time)
+#5.Compare and get the longest time range
+#########################################################
 import datetime as DT
 
 def to_int(dt_object):
