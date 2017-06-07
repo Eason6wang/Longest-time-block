@@ -1,3 +1,13 @@
+#####################IDEA################################
+#1.Convert all the raw data into numbers, O(n)
+#2.We get a set of time range(we called this busy-time)
+#3.We consider the time before 8am and after 10pm as busy-time, O(7)
+#4.Union all the busy-time, O(nlog(n)), if I implement non-comparison sorting, it could be O(n)
+#5.We get the compliment of the busy-time in the following week(available-time), O(n)
+#6.Compare and get the longest time range, O(n)
+# Overall, O(nlog(n)), but it is possible to make it O(n)
+#########################################################
+
 import datetime as DT
 
 
