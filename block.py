@@ -36,7 +36,7 @@ def convert(line_info):
 
 def union(a):
     b = []
-    sorted(a)
+    a = sorted(a)
     for begin,end in a:
         if b and b[-1][1] >= begin - 1:
             b[-1][1] = max(b[-1][1], end)
