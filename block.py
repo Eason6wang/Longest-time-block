@@ -1,42 +1,5 @@
-#####################IDEA################################
-#1.Convert all the raw data into numbers, O(n)
-#2.We get a set of time range(we called this busy-time)
-#3.We consider the time before 8am and after 10pm as busy-time, O(7)
-#4.Union all the busy-time, O(nlog(n)), if I implement non-comparison sorting, it could be O(n)
-#5.We get the compliment of the busy-time in the following week(available-time), O(n)
-#6.Compare and get the longest time range, O(n)
-# Overall, O(nlog(n)), but it is possible to make it O(n)
-#########################################################
 import datetime as DT
 
-#retrieve from http://www.geekviewpoint.com/python/sorting/radixsort
-def radixsort( aList ):
-  RADIX = 10
-  maxLength = False
-  tmp , placement = -1, 1
- 
-  while not maxLength:
-    maxLength = True
-    # declare and initialize buckets
-    buckets = [list() for _ in range( RADIX )]
- 
-    # split aList between lists
-    for  i in aList:
-      tmp = i / placement
-      buckets[tmp % RADIX].append( i )
-      if maxLength and tmp > 0:
-        maxLength = False
- 
-    # empty lists into aList array
-    a = 0
-    for b in range( RADIX ):
-      buck = buckets[b]
-      for i in buck:
-        aList[a] = i
-        a += 1
- 
-    # move to next digit
-    placement *= RADIX
 
 def to_int(dt_object):
     return int(dt_object.strftime("%Y%m%d%H%M%S"))
